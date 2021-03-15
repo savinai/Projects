@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Bulk Emailing</title>
+  </head>
+  <body style="background-color:orange; padding-left:20px;">
+    <h1 style="margin-top:20px; color:black">Send Bulk Emails Through Gmail ID</h1>
+    <h2 style="color:green">Before proceeding, allow less secure apps in your gmail settings</h2>
+    <p style="color:green;"><b>The names in your excel list will be added automatically in email body for addressing. Ex: Dear 'Name' followed by the message</b></p>
+    <p>Download the excel format to upload list of emails</p>
+    <a href={% static "Emails_list.xlsx" %} >
+		<button class='btn btn-primary' type="button">Download</button>
+		</a>
+
+<div class="container">
+
+  <p>Upload Mailing List after filling the downloaded template</p>
+  <form method="POST" enctype="multipart/form-data">
+    <input class='btn btn-large' type="file"
+                   title="Upload excel file"
+                   name="Excel_Email_List"
+                   style="border: 1px solid black; padding: 5px;"
+                   required="required">
+                   <p></p>
+            <p>Upload Attachment (optional)</p>
+                   <input type="file"
+                                  title="Upload Attachment"
+                                  name="Attachment"
+                                  style="border: 1px solid black; padding: 5px;"
+                                  >
+                           <p></p>
+</div>
+<div class="container" style="margin-left:400px">
+
+    {{ form.as_p }}
+    {% csrf_token %}
+    <input type='submit' class='btn btn-primary' value="Send">
+  </form>
+</div>
+  </body>
+</html>
+
+<style>
+		p {
+		color: black;
+		}
+    body {
+      background-color:white;
+    }
+</style>
