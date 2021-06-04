@@ -4,8 +4,8 @@ Django Projects done by me.
 ## Deployed Apps
 
 ### Blog on PythonAnywhere
-  http://savinaiv.pythonanywhere.com/
+  <html><a href=http://savinaiv.pythonanywhere.com/> Click here for Blog Project </a></html>
   
 ### Bulk Email App on google cloud
-  https://applications-302006.uc.r.appspot.com/
+  <html><a href=https://applications-302006.uc.r.appspot.com/> Click here for bulk emailing app</a></html>
 
